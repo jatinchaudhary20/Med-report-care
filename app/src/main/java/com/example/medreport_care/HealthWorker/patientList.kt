@@ -1,15 +1,12 @@
-package com.example.medreport_care
+package com.example.medreport_care.HealthWorker
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.medreport_care.R
 
-class MainActivity : AppCompatActivity() {
+class patientList : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-
-
-
+        setContentView(R.layout.activity_patient_list)
     }
 }
