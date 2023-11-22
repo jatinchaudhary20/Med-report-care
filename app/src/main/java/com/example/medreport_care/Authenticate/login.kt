@@ -41,9 +41,14 @@ class login : AppCompatActivity() {
             val password = binding.loginPassword.text.toString()
 
             if (checkAllfield()) {
+
+                //auth verification
                 auth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        val user = if (binding.radiodoc.isChecked) "doctor" else "Health Worker"
+
+                        //user check
+                        val user = if (binding.radiodoc.isChecked){ "doctor"}
+                        else {"Health Worker"}
 
                         // Launch a coroutine to execute userCheck function
                         GlobalScope.launch(Dispatchers.Main) {

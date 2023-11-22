@@ -127,13 +127,20 @@ class SignUp : AppCompatActivity() {
         return true
     }
 
+
     private fun userReg(user:String){
         val userId= FirebaseAuth.getInstance().currentUser?.uid.toString()
-        docref = FirebaseDatabase.getInstance().getReference("Doctor Data").child(userId)
+        docref = FirebaseDatabase.getInstance().getReference("Doctor Data")
         hwref = FirebaseDatabase.getInstance().getReference("Health Woker Data").child(userId)
 
         if(user=="doctor"){
-            docref.setValue(binding.etUsernameSignup.text.toString()).addOnCompleteListener {
+            docref.child(userId).setValue(binding.etUsernameSignup.text.toString()).addOnCompleteListener {
+                Toast.makeText(this, "Data Inserted Success", Toast.LENGTH_SHORT).show()
+            }.addOnFailureListener {
+                Toast.makeText(this, "Fail To Insert Data", Toast.LENGTH_SHORT).show()
+            }
+
+            docref.child(binding.etUsernameSignup.text.toString()).setValue(userId).addOnCompleteListener {
                 Toast.makeText(this, "Data Inserted Success", Toast.LENGTH_SHORT).show()
             }.addOnFailureListener {
                 Toast.makeText(this, "Fail To Insert Data", Toast.LENGTH_SHORT).show()
