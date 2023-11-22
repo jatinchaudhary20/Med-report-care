@@ -16,6 +16,9 @@
         android:theme="@style/Theme.MedReportCare"
         tools:targetApi="31">
         <activity
+            android:name=".Authenticate.testActivity"
+            android:exported="false" />
+        <activity
             android:name=".HealthWorker.patientList"
             android:exported="false" />
         <activity
