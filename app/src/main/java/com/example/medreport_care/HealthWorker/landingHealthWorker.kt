@@ -23,6 +23,13 @@ class landingHealthWorker : AppCompatActivity() {
         pateintref = FirebaseDatabase.getInstance().getReference("Pateint Report")
         docref = FirebaseDatabase.getInstance().getReference("Doctor Report")
 
+        binding.submitbutton.setOnClickListener {
+
+            saveEmployeeData()
+            clearBlocks()
+
+        }
+
     }
 
     private fun checkAllfield(): Boolean {

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
+//import com.example.medreport_care.Doctor.pateintListDoctor
+import com.example.medreport_care.HealthWorker.patientList
 import com.example.medreport_care.MainActivity
 import com.example.medreport_care.R
 import com.example.medreport_care.databinding.ActivityLoginBinding
@@ -13,6 +15,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -25,6 +28,7 @@ class login : AppCompatActivity() {
     private lateinit var docref: DatabaseReference
     private lateinit var hwref: DatabaseReference
 
+    @OptIn(DelicateCoroutinesApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -53,13 +57,28 @@ class login : AppCompatActivity() {
                         // Launch a coroutine to execute userCheck function
                         GlobalScope.launch(Dispatchers.Main) {
                             val check = userCheck(user)
-
                             // Now you can use the result here
                             if (check) {
                                 // The user is a doctor or health worker
                                 Toast.makeText(this@login, "Login successful", Toast.LENGTH_SHORT).show()
-                                val i = Intent(this@login, MainActivity::class.java)
-                                startActivity(i)
+
+                                if(user =="doctor"){
+                                    val intent = Intent(this@login,patientList::class.java)
+                                    startActivity(intent)
+                                    finish()
+                                }
+
+                                else{
+                                    val intent = Intent(this@login,patientList::class.java)
+                                    startActivity(intent)
+                                    finish()
+                                }
+
+
+
+
+
+
 
                             } else {
                                 // The user is not a doctor or health worker
@@ -114,4 +133,5 @@ class login : AppCompatActivity() {
             }
         }
     }
+
 }

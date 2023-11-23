@@ -6,9 +6,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.medreport_care.HealthWorker.Model.PateintModel
+import com.example.medreport_care.HealthWorker.Model.rvlistModel
 import com.example.medreport_care.R
 
-    class pateintListAdapter(private var pateintlist :ArrayList<PateintModel>)  : RecyclerView.Adapter<ViewHolder> () {
+    class pateintListAdapter(private var pateintlist :ArrayList<rvlistModel>)  : RecyclerView.Adapter<ViewHolder> () {
 
 
         interface onItemClickListener{
@@ -33,7 +34,10 @@ import com.example.medreport_care.R
         }
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-            TODO("Not yet implemented")
+            val currentPateint = pateintlist[position]
+            holder.pateintName.text=currentPateint.nameFirst
+            holder.pateintnumber.text=currentPateint.age
+            holder.pateintlocation.text=currentPateint.location
         }
 
 
