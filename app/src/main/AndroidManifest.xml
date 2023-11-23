@@ -16,6 +16,9 @@
         android:theme="@style/Theme.MedReportCare"
         tools:targetApi="31">
         <activity
+            android:name=".doctor.docpateintlist"
+            android:exported="false" />
+        <activity
             android:name=".Doctor.pateintListDoctor"
             android:exported="false" />
         <activity
