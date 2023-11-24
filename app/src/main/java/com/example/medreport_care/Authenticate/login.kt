@@ -87,7 +87,8 @@ class login : AppCompatActivity() {
                                 Toast.makeText(this@login, "Invalid user type", Toast.LENGTH_SHORT).show()
                             }
                         }
-                    } else {
+                    }
+                    else {
                         Toast.makeText(this, "Login failed", Toast.LENGTH_SHORT).show()
                     }
                 }

@@ -62,7 +62,7 @@
                 android:layout_weight="1.2">
 
                 <TextView
-                    android:id="@+id/pdfirstname"
+                    android:id="@+id/pdname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -114,7 +114,7 @@
                 android:layout_weight="1.2">
 
                 <TextView
-                    android:id="@+id/pdlastname"
+                    android:id="@+id/pdbmi"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -171,7 +171,7 @@
                 android:layout_weight="1.2">
 
                 <TextView
-                    android:id="@+id/pdage"
+                    android:id="@+id/pdbp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -234,7 +234,7 @@
                 android:layout_weight="1.2">
 
                 <TextView
-                    android:id="@+id/pdlocation"
+                    android:id="@+id/pdheartrate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -354,7 +354,7 @@
                 android:layout_weight="1.2">
 
                 <TextView
-                    android:id="@+id/pdsomething"
+                    android:id="@+id/pddoctorname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"

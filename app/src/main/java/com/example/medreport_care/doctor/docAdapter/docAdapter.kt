@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 //import com.example.medreport_care.Doctor.Model.rvPateintModel
-import com.example.medreport_care.doctor.model.rvPateintModel
+import com.example.medreport_care.doctor.rvPateintModel
 import com.example.medreport_care.HealthWorker.Adapters.ViewHolder
 import com.example.medreport_care.HealthWorker.Adapters.pateintListAdapter
 import com.example.medreport_care.R

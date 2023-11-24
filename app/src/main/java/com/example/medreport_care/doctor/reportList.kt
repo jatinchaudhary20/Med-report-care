@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.medreport_care.doctor.model.rvPateintModel
+import com.example.medreport_care.doctor.rvPateintModel
 import com.example.medreport_care.doctor.docAdapter.docAdapter
 import com.example.medreport_care.HealthWorker.Adapters.pateintListAdapter
 import com.example.medreport_care.MainActivity
@@ -77,7 +77,14 @@ class reportList : AppCompatActivity() {
                                 menuAdapter.setOnItemClickListener(object: pateintListAdapter.onItemClickListener{
                                     override fun onItemClick(position: Int) {
                                         //need to change here acc to user activity
-                                        val intent = Intent(this@reportList,MainActivity::class.java)
+                                        val intent = Intent(this@reportList,dataFetch::class.java)
+                                        intent.putExtra("userId",Pateintlist[position].userId.toString())
+                                        intent.putExtra("name",Pateintlist[position].name.toString())
+                                        intent.putExtra("bmi",Pateintlist[position].bmi.toString())
+                                        intent.putExtra("bp",Pateintlist[position].bp.toString())
+                                        intent.putExtra("doctorname",Pateintlist[position].doctorname.toString())
+                                        intent.putExtra("sugar",Pateintlist[position].sugar.toString())
+                                        intent.putExtra("heartrate",Pateintlist[position].heartrate.toString())
                                         startActivity(intent)
                                     }
                                 })
