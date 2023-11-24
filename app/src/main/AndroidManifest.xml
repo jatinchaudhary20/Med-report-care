@@ -16,10 +16,10 @@
         android:theme="@style/Theme.MedReportCare"
         tools:targetApi="31">
         <activity
-            android:name=".doctor.reportList"
+            android:name=".doctor.dataFetch"
             android:exported="false" />
         <activity
-            android:name=".doctor.dataFetch"
+            android:name=".doctor.reportList"
             android:exported="false" />
         <activity
             android:name=".Authenticate.testActivity"
