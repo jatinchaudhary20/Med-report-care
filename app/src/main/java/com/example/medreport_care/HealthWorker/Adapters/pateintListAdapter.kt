@@ -22,8 +22,6 @@ import com.example.medreport_care.R
             mListener = clickListener
         }
 
-
-
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             val itemView = LayoutInflater.from(parent.context).inflate(R.layout.pateint_list_card,parent,false)
             return ViewHolder(itemView, mListener)

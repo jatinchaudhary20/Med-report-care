@@ -5,10 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
-//import com.example.medreport_care.Doctor.pateintListDoctor
+import com.example.medreport_care.doctor.reportList
 import com.example.medreport_care.HealthWorker.patientList
-import com.example.medreport_care.MainActivity
-import com.example.medreport_care.R
 import com.example.medreport_care.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -55,7 +53,7 @@ class login : AppCompatActivity() {
                         else {"Health Worker"}
 
                         // Launch a coroutine to execute userCheck function
-                        GlobalScope.launch(Dispatchers.Main) {
+                             GlobalScope.launch(Dispatchers.Main) {
                             val check = userCheck(user)
                             // Now you can use the result here
                             if (check) {
@@ -63,15 +61,19 @@ class login : AppCompatActivity() {
                                 Toast.makeText(this@login, "Login successful", Toast.LENGTH_SHORT).show()
 
                                 if(user =="doctor"){
+                                    val intent = Intent(this@login,reportList::class.java)
+                                    startActivity(intent)
+                                    finish()
+                                }
+
+                                else if(user=="Health Worker"){
                                     val intent = Intent(this@login,patientList::class.java)
                                     startActivity(intent)
                                     finish()
                                 }
 
                                 else{
-                                    val intent = Intent(this@login,patientList::class.java)
-                                    startActivity(intent)
-                                    finish()
+                                    Toast.makeText(this@login,"error login user not found",Toast.LENGTH_SHORT).show()
                                 }
 
 

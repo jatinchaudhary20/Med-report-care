@@ -17,9 +17,12 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
 class patientList : AppCompatActivity() {
+
+
     private lateinit var binding : ActivityPatientListBinding
     private lateinit var hwref : DatabaseReference
     private lateinit var Pateintlist :ArrayList<rvlistModel>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         binding= ActivityPatientListBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
@@ -51,6 +54,7 @@ class patientList : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 Pateintlist.clear()
                 if (snapshot.exists()) {
+
                     for (pateintsnap in snapshot.children) {
                         val pateintData = pateintsnap.getValue(rvlistModel::class.java)
                         Pateintlist.add(pateintData!!)
